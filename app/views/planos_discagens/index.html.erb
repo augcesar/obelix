@@ -1,0 +1,23 @@
+<h1>Listing planos_discagens</h1>
+
+<table>
+  <tr>
+    <th>Descricao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @planos_discagens.each do |plano_discagem| %>
+  <tr>
+    <td><%= plano_discagem.descricao %></td>
+    <td><%= link_to 'Show', plano_discagem %></td>
+    <td><%= link_to 'Edit', edit_plano_discagem_path(plano_discagem) %></td>
+    <td><%= link_to 'Destroy', plano_discagem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Plano discagem', new_plano_discagem_path %>

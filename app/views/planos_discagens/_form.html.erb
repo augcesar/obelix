@@ -1,0 +1,21 @@
+<%= form_for(@plano_discagem) do |f| %>
+  <% if @plano_discagem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plano_discagem.errors.count, "error") %> prohibited this plano_discagem from being saved:</h2>
+
+      <ul>
+      <% @plano_discagem.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :descricao %><br />
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

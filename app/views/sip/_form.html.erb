@@ -1,0 +1,62 @@
+<%= form_for @sip, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :context, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :context, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bindport, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :bindport, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bindaddr, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bindaddr, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tos_sip, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tos_sip, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tos_audio, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tos_audio, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tos_video, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tos_video, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :videosupport, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :videosupport, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :t38pt_udptl, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :t38pt_udptl, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :limitonpeers, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :limitonpeers, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                sip_path, :class => 'btn' %>
+  </div>
+<% end %>

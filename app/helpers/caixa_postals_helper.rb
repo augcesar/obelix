@@ -1,0 +1,2 @@
+module CaixaPostalsHelper
+end

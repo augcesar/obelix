@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  context: MyString
+  bindport: 1
+  bindaddr: MyString
+  tos_sip: MyString
+  tos_audio: MyString
+  tos_video: MyString
+  videosupport: MyString
+  t38pt_udptl: MyString
+  limitonpeers: MyString
+
+two:
+  context: MyString
+  bindport: 1
+  bindaddr: MyString
+  tos_sip: MyString
+  tos_audio: MyString
+  tos_video: MyString
+  videosupport: MyString
+  t38pt_udptl: MyString
+  limitonpeers: MyString

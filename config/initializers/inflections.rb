@@ -10,6 +10,13 @@
 # end
 #
 # These inflection rules are supported but not enabled by default:
-# ActiveSupport::Inflector.inflections do |inflect|
-#   inflect.acronym 'RESTful'
-# end
+ ActiveSupport::Inflector.inflections do |inflect|
+   #inflect.acronym 'RESTful'
+   inflect.irregular 'sip','sip'
+   inflect.irregular 'iax','iax'
+   inflect.irregular 'ramal','ramais'	
+   inflect.irregular 'caixa_postal','caixas_postais'
+   inflect.irregular 'plano_discagem','planos_discagens'
+   inflect.irregular 'monitoramento','monitoramentos'
+
+ end

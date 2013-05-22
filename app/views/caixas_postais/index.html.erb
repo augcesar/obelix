@@ -1,0 +1,23 @@
+<h1>Listing caixas_postais</h1>
+
+<table>
+  <tr>
+    <th>Descricao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @caixas_postais.each do |caixa_postal| %>
+  <tr>
+    <td><%= caixa_postal.descricao %></td>
+    <td><%= link_to 'Show', caixa_postal %></td>
+    <td><%= link_to 'Edit', edit_caixa_postal_path(caixa_postal) %></td>
+    <td><%= link_to 'Destroy', caixa_postal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Caixa postal', new_caixa_postal_path %>

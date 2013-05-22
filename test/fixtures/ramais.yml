@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  callerid: MyString
+  type: 
+  username: MyString
+  secret: MyString
+  canreinvite: MyString
+  host: MyString
+  context: MyString
+  dtmfmode: MyString
+  call_limit: MyString
+  nat: MyString
+
+two:
+  callerid: MyString
+  type: 
+  username: MyString
+  secret: MyString
+  canreinvite: MyString
+  host: MyString
+  context: MyString
+  dtmfmode: MyString
+  call_limit: MyString
+  nat: MyString

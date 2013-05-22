@@ -1,0 +1,52 @@
+<%- model_class = Sip -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:context) %></th>
+      <th><%= model_class.human_attribute_name(:bindport) %></th>
+      <th><%= model_class.human_attribute_name(:bindaddr) %></th>
+      <th><%= model_class.human_attribute_name(:tos_sip) %></th>
+      <th><%= model_class.human_attribute_name(:tos_audio) %></th>
+      <th><%= model_class.human_attribute_name(:tos_video) %></th>
+      <th><%= model_class.human_attribute_name(:videosupport) %></th>
+      <th><%= model_class.human_attribute_name(:t38pt_udptl) %></th>
+      <th><%= model_class.human_attribute_name(:limitonpeers) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sip.each do |sip| %>
+      <tr>
+        <td><%= link_to sip.id, sip_path(sip) %></td>
+        <td><%= sip.context %></td>
+        <td><%= sip.bindport %></td>
+        <td><%= sip.bindaddr %></td>
+        <td><%= sip.tos_sip %></td>
+        <td><%= sip.tos_audio %></td>
+        <td><%= sip.tos_video %></td>
+        <td><%= sip.videosupport %></td>
+        <td><%= sip.t38pt_udptl %></td>
+        <td><%= sip.limitonpeers %></td>
+        <td><%=l sip.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_sip_path(sip), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      sip_path(sip),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_sip_path,
+            :class => 'btn btn-primary' %>

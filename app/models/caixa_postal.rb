@@ -1,3 +1,4 @@
 class CaixaPostal < ActiveRecord::Base
-  attr_accessible :descricao
+  belongs_to :ramal
+  attr_accessible :descricao,:ramal_id
 end

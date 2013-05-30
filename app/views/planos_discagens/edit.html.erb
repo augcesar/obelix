@@ -1,6 +1,5 @@
-<h1>Editing plano_discagem</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @plano_discagem %> |
-<%= link_to 'Back', planos_discagens_path %>
+<%- model_class = PlanoDiscagem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human %></h1>
+</div>
+<%= render :partial => 'form' %>

@@ -1,4 +1,5 @@
 class CaixasPostaisController < ApplicationController
+  after_filter :salvar_dados_conf, :only => [:create, :update, :delete]
   # GET /caixas_postais
   # GET /caixas_postais.json
   def index
@@ -80,4 +81,11 @@ class CaixasPostaisController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+  def salvar_dados_conf    
+    # Guardar Dados
+    guardar_caixa_postal_conf(CaixaPostal.all)
+    # 
+  end   
 end

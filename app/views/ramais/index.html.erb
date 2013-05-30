@@ -6,8 +6,9 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:ramal) %></th>
       <th><%= model_class.human_attribute_name(:callerid) %></th>
-      <th><%= model_class.human_attribute_name(:type) %></th>
+      <th><%= model_class.human_attribute_name(:tipo) %></th>
       <th><%= model_class.human_attribute_name(:username) %></th>
       <th><%= model_class.human_attribute_name(:secret) %></th>
       <th><%= model_class.human_attribute_name(:canreinvite) %></th>
@@ -16,7 +17,6 @@
       <th><%= model_class.human_attribute_name(:dtmfmode) %></th>
       <th><%= model_class.human_attribute_name(:call_limit) %></th>
       <th><%= model_class.human_attribute_name(:nat) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -24,8 +24,9 @@
     <% @ramais.each do |ramal| %>
       <tr>
         <td><%= link_to ramal.id, ramal_path(ramal) %></td>
+        <td><%= ramal.ramal %></td>
         <td><%= ramal.callerid %></td>
-        <td><%= ramal.type %></td>
+        <td><%= ramal.tipo %></td>
         <td><%= ramal.username %></td>
         <td><%= ramal.secret %></td>
         <td><%= ramal.canreinvite %></td>
@@ -34,7 +35,6 @@
         <td><%= ramal.dtmfmode %></td>
         <td><%= ramal.call_limit %></td>
         <td><%= ramal.nat %></td>
-        <td><%=l ramal.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_ramal_path(ramal), :class => 'btn btn-mini' %>

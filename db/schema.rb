@@ -11,11 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522213448) do
+ActiveRecord::Schema.define(:version => 20130530153345) do
+
+  create_table "caixas_postais", :force => true do |t|
+    t.integer  "ramal_id"
+    t.string   "descricao",  :limit => 5000
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "caixas_postais", ["ramal_id"], :name => "index_caixas_postais_on_ramal_id"
+
+  create_table "planos_discagens", :force => true do |t|
+    t.string   "descricao",  :limit => 5000
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
 
   create_table "ramais", :force => true do |t|
+    t.string   "ramal"
     t.string   "callerid"
-    t.string   "type"
+    t.string   "tipo"
     t.string   "username"
     t.string   "secret"
     t.string   "canreinvite"

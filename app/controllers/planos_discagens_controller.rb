@@ -1,4 +1,5 @@
 class PlanosDiscagensController < ApplicationController
+  after_filter :salvar_dados_conf, :only => [:create, :update, :delete]
   # GET /planos_discagens
   # GET /planos_discagens.json
   def index
@@ -80,4 +81,11 @@ class PlanosDiscagensController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+  def salvar_dados_conf    
+    # Guardar Dados
+    guardar_extensao_conf(PlanoDiscagem.first)
+    # 
+  end 
 end

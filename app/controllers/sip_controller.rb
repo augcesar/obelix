@@ -1,9 +1,12 @@
 class SipController < ApplicationController
+  after_filter :salvar_dados_conf, :only => [:create, :update, :delete]
+ 
   # GET /sip
   # GET /sip.json
+
   def index
     @sip = Sip.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @sip }
@@ -79,5 +82,12 @@ class SipController < ApplicationController
       format.html { redirect_to sip_index_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def salvar_dados_conf    
+    # Guardar Dados
+    guardar_sip_ramal_conf(Sip.all,Ramal.all)
+    # 
   end
 end

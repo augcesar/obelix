@@ -1,21 +1,16 @@
-<%= form_for(@plano_discagem) do |f| %>
-  <% if @plano_discagem.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@plano_discagem.errors.count, "error") %> prohibited this plano_discagem from being saved:</h2>
+<%= form_for @plano_discagem, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :descricao, :class => 'control-label' %>
+    <div class="controls">
+      <%#= f.text_field :descricao, :class => 'text_field' %>
+      <%= f.text_area(:descricao, :rows => 20, :cols => 80,:class => 'span6',:required => '',:placeholder => "Informe os dados do plano de discagem.")%>
 
-      <ul>
-      <% @plano_discagem.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :descricao %><br />
-    <%= f.text_field :descricao %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                planos_discagens_path, :class => 'btn' %>
   </div>
 <% end %>

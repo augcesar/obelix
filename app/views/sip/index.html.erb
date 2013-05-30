@@ -15,7 +15,6 @@
       <th><%= model_class.human_attribute_name(:videosupport) %></th>
       <th><%= model_class.human_attribute_name(:t38pt_udptl) %></th>
       <th><%= model_class.human_attribute_name(:limitonpeers) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -32,7 +31,6 @@
         <td><%= sip.videosupport %></td>
         <td><%= sip.t38pt_udptl %></td>
         <td><%= sip.limitonpeers %></td>
-        <td><%=l sip.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_sip_path(sip), :class => 'btn btn-mini' %>

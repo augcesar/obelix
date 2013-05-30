@@ -1,9 +1,9 @@
 Obelix::Application.routes.draw do
   
-  resources :planos_discagens
-
-
   resources :caixas_postais
+
+
+  resources :planos_discagens
 
 
   #root :to => 'principals#index'

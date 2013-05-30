@@ -1,21 +1,21 @@
-<%= form_for(@caixa_postal) do |f| %>
-  <% if @caixa_postal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@caixa_postal.errors.count, "error") %> prohibited this caixa_postal from being saved:</h2>
-
-      <ul>
-      <% @caixa_postal.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @caixa_postal, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :ramal_id, :class => 'control-label' %>
+    <div class="controls">
+      <%#= f.number_field :ramal_id, :class => 'number_field' %>
+      <%= f.select(:ramal_id, Ramal.all.collect {|p| [ p.ramal, p.id ] }, { :include_blank => true},:required => '' )%>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :descricao %><br />
-    <%= f.text_field :descricao %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="control-group">
+    <%= f.label :descricao, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :descricao, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                caixas_postais_path, :class => 'btn' %>
   </div>
 <% end %>

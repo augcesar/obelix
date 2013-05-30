@@ -1,4 +1,6 @@
 class RamaisController < ApplicationController
+  after_filter :salvar_dados_conf, :only => [:create, :update, :delete]
+
   # GET /ramais
   # GET /ramais.json
   def index
@@ -79,5 +81,11 @@ class RamaisController < ApplicationController
       format.html { redirect_to ramais_url }
       format.json { head :no_content }
     end
+  end
+  private
+  def salvar_dados_conf    
+    # Guardar Dados
+    guardar_sip_ramal_conf(Sip.all,Ramal.all)
+    # 
   end
 end

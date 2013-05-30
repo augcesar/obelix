@@ -45,10 +45,12 @@
             <span class="icon-bar"></span>
           </a>
           <a class="brand" href="#">Obelix</a>
-          <div class="container-fluid nav-collapse">
+          <div style="display:none" class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Sip", 'sip'  %></li>
               <li><%= link_to "Ramais", 'ramais'  %></li>
+              <li><%= link_to "Caixa Postal", 'caixas_postais'  %></li>
+              <li><%= link_to "Plano de Discagem", 'planos_discagens'  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -61,8 +63,10 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Sip", 'sip'  %></li>
-              <li><%= link_to "Ramais", 'ramais'  %></li>
+              <li><%= link_to "Sip", '/sip'  %></li>
+              <li><%= link_to "Ramais", '/ramais'  %></li>
+              <li><%= link_to "Caixa Postal", '/caixas_postais'  %></li>
+              <li><%= link_to "Plano de Discagem", '/planos_discagens'  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
@@ -72,8 +76,8 @@
         </div>
       </div><!--/row-->
 
-      <footer>
-        <p>&copy; Obelix 2013</p>
+      <footer style="margin-top:200px">
+        <p align="center">&copy; Obelix 2013</p>
       </footer>
 
     </div> <!-- /container -->

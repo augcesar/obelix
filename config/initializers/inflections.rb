@@ -12,6 +12,7 @@
 # These inflection rules are supported but not enabled by default:
  ActiveSupport::Inflector.inflections do |inflect|
    #inflect.acronym 'RESTful'
+   inflect.irregular 'login','login'
    inflect.irregular 'sip','sip'
    inflect.irregular 'iax','iax'
    inflect.irregular 'ramal','ramais'	

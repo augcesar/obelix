@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530153345) do
+ActiveRecord::Schema.define(:version => 20130601031021) do
 
   create_table "caixas_postais", :force => true do |t|
     t.integer  "ramal_id"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(:version => 20130530153345) do
   end
 
   add_index "caixas_postais", ["ramal_id"], :name => "index_caixas_postais_on_ramal_id"
+
+  create_table "login", :force => true do |t|
+    t.string   "usuario"
+    t.string   "senha"
+    t.integer  "ativo"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "planos_discagens", :force => true do |t|
     t.string   "descricao",  :limit => 5000

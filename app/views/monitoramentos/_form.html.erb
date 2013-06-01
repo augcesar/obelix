@@ -1,0 +1,17 @@
+<%= form_for(@monitoramento) do |f| %>
+  <% if @monitoramento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@monitoramento.errors.count, "error") %> prohibited this monitoramento from being saved:</h2>
+
+      <ul>
+      <% @monitoramento.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

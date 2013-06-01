@@ -1,14 +1,19 @@
 Obelix::Application.routes.draw do
-  
-  resources :caixas_postais
 
+  resources :login
+
+  resources :caixas_postais
 
   resources :planos_discagens
 
-
-  #root :to => 'principals#index'
   resources :ramais
+
   resources :sip
+
+  match "monitoramento/ajax" => "monitoramentos#ajax"
+
+  root :to => 'login#new'
+
   match ':controller(/:action(/:id))(.:format)'
 
   # The priority is based upon order of creation:

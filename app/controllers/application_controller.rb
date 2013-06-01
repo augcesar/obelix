@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
 		sip.close
 
 		# Reload Asterisk
-		`/etc/init.d/asterisk reload`	
+		`asterisk -x 'sip reload'`	
 	rescue Exception => e
 	 	flash[:info] = "Não foi possível guardar os dados na voicemail.conf"
 	 end  
@@ -56,7 +56,7 @@ class ApplicationController < ActionController::Base
 
 
 	# Reload Asterisk
-	`/etc/init.d/asterisk reload`	
+	`asterisk -x 'dialplan reload'`	
   end
 
   def guardar_caixa_postal_conf (object_box)
@@ -69,7 +69,10 @@ class ApplicationController < ActionController::Base
 		end
 
 		sip.write text
-		sip.close	 	
+		sip.close	
+
+		# Reload Asterisk
+		`asterisk -x 'voicemail reload'`			 	
 	 rescue Exception => e
 	 	flash[:info] = "Não foi possível guardar os dados na voicemail.conf"
 	 end  	

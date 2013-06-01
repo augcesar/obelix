@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+function monitoramento()  {
+	$.ajax({
+		type: "POST",
+		url: "monitoramento/ajax",
+		success: function(data){
+        $('#monitoramento').html(data);  
+      }
+	});	
+}
+
+jQuery(function() {
+	setInterval("monitoramento()",5000);
+});

@@ -12,7 +12,7 @@ Obelix::Application.routes.draw do
 
   match "monitoramento/ajax" => "monitoramentos#ajax"
 
-  root :to => 'login#new'
+  root :to => 'sip#index'
 
   match ':controller(/:action(/:id))(.:format)'
 

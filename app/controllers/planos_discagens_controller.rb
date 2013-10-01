@@ -45,7 +45,7 @@ class PlanosDiscagensController < ApplicationController
 
     respond_to do |format|
       if @plano_discagem.save
-        format.html { redirect_to @plano_discagem, notice: 'Plano discagem was successfully created.' }
+        format.html { redirect_to @plano_discagem, notice: 'Plano discagem criado com sucesso!' }
         format.json { render json: @plano_discagem, status: :created, location: @plano_discagem }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class PlanosDiscagensController < ApplicationController
 
     respond_to do |format|
       if @plano_discagem.update_attributes(params[:plano_discagem])
-        format.html { redirect_to @plano_discagem, notice: 'Plano discagem was successfully updated.' }
+        format.html { redirect_to @plano_discagem, notice: 'Plano discagem alterado com sucesso!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

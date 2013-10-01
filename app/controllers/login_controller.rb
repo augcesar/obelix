@@ -44,7 +44,7 @@ class LoginController < ApplicationController
 
     respond_to do |format|
       if @login.save
-        format.html { redirect_to @login, notice: 'Login was successfully created.' }
+        format.html { redirect_to @login, notice: 'Login criado com sucesso!' }
         format.json { render json: @login, status: :created, location: @login }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class LoginController < ApplicationController
 
     respond_to do |format|
       if @login.update_attributes(params[:login])
-        format.html { redirect_to @login, notice: 'Login was successfully updated.' }
+        format.html { redirect_to @login, notice: 'Login alterado com sucesso!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

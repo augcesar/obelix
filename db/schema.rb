@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601031021) do
+ActiveRecord::Schema.define(:version => 20130603022632) do
 
   create_table "caixas_postais", :force => true do |t|
     t.integer  "ramal_id"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(:version => 20130601031021) do
   end
 
   add_index "caixas_postais", ["ramal_id"], :name => "index_caixas_postais_on_ramal_id"
+
+  create_table "iax", :force => true do |t|
+    t.string   "bindport"
+    t.string   "bindaddr"
+    t.string   "disallow"
+    t.string   "bandwidth"
+    t.string   "allow"
+    t.string   "tos"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "login", :force => true do |t|
     t.string   "usuario"
@@ -37,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20130601031021) do
   end
 
   create_table "ramais", :force => true do |t|
+    t.integer  "tipo_protocolo"
     t.string   "ramal"
     t.string   "callerid"
     t.string   "tipo"

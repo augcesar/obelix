@@ -47,7 +47,7 @@ class SipController < ApplicationController
 
     respond_to do |format|
       if @sip.save
-        format.html { redirect_to @sip, notice: 'Sip was successfully created.' }
+        format.html { redirect_to @sip, notice: 'Sip criado com sucesso!' }
         format.json { render json: @sip, status: :created, location: @sip }
       else
         format.html { render action: "new" }
@@ -63,7 +63,7 @@ class SipController < ApplicationController
 
     respond_to do |format|
       if @sip.update_attributes(params[:sip])
-        format.html { redirect_to @sip, notice: 'Sip was successfully updated.' }
+        format.html { redirect_to @sip, notice: 'Sip alterado com sucesso!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -46,7 +46,7 @@ class RamaisController < ApplicationController
 
     respond_to do |format|
       if @ramal.save
-        format.html { redirect_to @ramal, notice: 'Ramal was successfully created.' }
+        format.html { redirect_to @ramal, notice: 'Ramal criado com sucesso!' }
         format.json { render json: @ramal, status: :created, location: @ramal }
       else
         format.html { render action: "new" }
@@ -62,7 +62,7 @@ class RamaisController < ApplicationController
 
     respond_to do |format|
       if @ramal.update_attributes(params[:ramal])
-        format.html { redirect_to @ramal, notice: 'Ramal was successfully updated.' }
+        format.html { redirect_to @ramal, notice: 'Ramal alterado com sucesso!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -86,6 +86,7 @@ class RamaisController < ApplicationController
   def salvar_dados_conf    
     # Guardar Dados
     guardar_sip_ramal_conf(Sip.all,Ramal.all)
+    guardar_iax_ramal_conf(Iax.all,Ramal.all)
     # 
   end
 end

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  bindport: MyString
+  bindaddr: MyString
+  disallow: MyString
+  bandwidth: MyString
+  allow: MyString
+  tos: MyString
+
+two:
+  bindport: MyString
+  bindaddr: MyString
+  disallow: MyString
+  bandwidth: MyString
+  allow: MyString
+  tos: MyString

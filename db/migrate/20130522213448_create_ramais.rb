@@ -1,6 +1,7 @@
 class CreateRamais < ActiveRecord::Migration
   def change
     create_table :ramais do |t|
+      t.integer :tipo_protocolo
       t.string :ramal
       t.string :callerid
       t.string :tipo

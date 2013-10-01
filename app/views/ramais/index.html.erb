@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:tipo_protocolo) %></th>
       <th><%= model_class.human_attribute_name(:ramal) %></th>
       <th><%= model_class.human_attribute_name(:callerid) %></th>
       <th><%= model_class.human_attribute_name(:tipo) %></th>
@@ -24,6 +25,7 @@
     <% @ramais.each do |ramal| %>
       <tr>
         <td><%= link_to ramal.id, ramal_path(ramal) %></td>
+        <td><%= ramal.tipo_protocolo.capitalize %></td>
         <td><%= ramal.ramal %></td>
         <td><%= ramal.callerid %></td>
         <td><%= ramal.tipo %></td>

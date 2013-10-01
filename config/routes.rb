@@ -10,6 +10,8 @@ Obelix::Application.routes.draw do
 
   resources :sip
 
+  resources :iax
+
   match "monitoramento/ajax" => "monitoramentos#ajax"
 
   root :to => 'sip#index'

@@ -26,5 +26,6 @@ function monitoramento()  {
 }
 
 jQuery(function() {
-	setInterval("monitoramento()",5000);
+	if($('#monitoramento').size()>0)
+	setInterval("monitoramento()",1700);
 });

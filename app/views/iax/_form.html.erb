@@ -1,0 +1,44 @@
+<%= form_for @iax, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :bindport, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bindport, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bindaddr, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bindaddr, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :disallow, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :disallow, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bandwidth, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bandwidth, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :allow, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :allow, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tos, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tos, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                iax_path, :class => 'btn' %>
+  </div>
+<% end %>

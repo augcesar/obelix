@@ -1,0 +1,2 @@
+module IaxHelper
+end

@@ -12,9 +12,11 @@ class MonitoramentosController < ApplicationController
   
   private
   def comandos
-	@usuarios = `asterisk -x 'sip show users'`
+	  @sip      = `asterisk -x 'sip show users'`
+    @iax      = `asterisk -x 'iax2 show peers'`
   	@peers    = `asterisk -x 'sip show peers'`
    	@channels = `asterisk -x 'core show channels'`	
+    @voicemail= `asterisk -x 'voicemail show users for LOCAL'`
   end  
    
 end

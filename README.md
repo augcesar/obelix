@@ -1,4 +1,5 @@
 obelix
 ======
 
-obelix
+
+Gerenciamento gráfico do asterisk
